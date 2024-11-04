@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NameImage } from "./shared/NameImage";
 
 import styles from "../styles/HeroSection.module.css";
 
 export const HeroSection = () => {
   const [actionButton, setActionButton] = useState("/images/playButton.svg");
-  const [audio] = useState<HTMLAudioElement>(new Audio("/sounds/music.mp3"));
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const handlePlayPause = () => {
@@ -23,6 +23,15 @@ export const HeroSection = () => {
 
     setIsPlaying(!isPlaying);
   };
+
+  useEffect(() => {
+    const audioInstance = new Audio("/sounds/music.mp3");
+    setAudio(audioInstance);
+
+    return () => {
+      audioInstance.pause();
+    };
+  }, []);
 
   return (
     <div className={styles.primaryContainer}>
