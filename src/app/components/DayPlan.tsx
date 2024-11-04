@@ -1,6 +1,5 @@
-import { VerticalLine } from "@/app/components/shared/VerticalLine";
-import Image from "next/image";
 import React from "react";
+import { VerticalLine } from "@/app/components/shared/VerticalLine";
 
 export const DayPlan = () => {
   return (

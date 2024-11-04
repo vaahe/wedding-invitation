@@ -5,9 +5,7 @@ import styles from "../styles/HeroSection.module.css";
 
 export const HeroSection = () => {
   const [actionButton, setActionButton] = useState("/images/playButton.svg");
-  const [audio, setAudio] = useState<HTMLAudioElement>(
-    new Audio("/sounds/music.mp3")
-  );
+  const [audio] = useState<HTMLAudioElement>(new Audio("/sounds/music.mp3"));
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const handlePlayPause = () => {
