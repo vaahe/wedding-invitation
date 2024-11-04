@@ -44,16 +44,6 @@ export const ImagesSection = () => {
           objectFit="cover"
         />
       </div>
-      <div className="w-3/4 max-w-xs">
-        <Image
-          src={"/images/image5.jpg"}
-          alt={"image5"}
-          layout="responsive"
-          width={1920}
-          height={1080}
-          objectFit="cover"
-        />
-      </div>
     </div>
-  );  
+  );
 };
