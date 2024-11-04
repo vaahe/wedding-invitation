@@ -1,0 +1,50 @@
+.waitingForYouSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+    margin-top: 40px;
+}
+
+.waitingForYouSection>.verticalLine {
+    background-color: #000000;
+    margin: 0 0 10px;
+}
+
+.waitingForYouText {
+    z-index: 3;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'The munday free version', sans-serif;
+    font-size: 96px;
+    z-index: 2;
+    line-height: 90px;
+    margin: 40px 0 0;
+}
+
+.remainingTimeSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+.remainingTimeSection>span {
+    margin-bottom: 10px;
+}
+
+.remainingTimeSection>div>div:not(:last-child)::after {
+    content: "";
+    height: 60px;
+    width: 1px;
+    margin: 0 0 0 15px;
+    background-color: #000000;
+}

@@ -1,0 +1,48 @@
+.container {
+    background-color: transparent;
+    z-index: 2;
+    align-self: flex-end;
+    position: relative;
+    left: 5%;
+    font-family: 'The munday free version', sans-serif;
+}
+
+@media (max-width: 768) {
+    .container {
+        margin-top: 200px;
+    }
+
+    .ampersandSection {
+        font-size: 300px !important;
+    }
+
+    .namesSection {
+        font-size: 40px !important;
+    }
+}
+
+.ampersandSection {
+    font-size: 412px;
+    line-height: 200px;
+    width: 100%;
+    display: inline-block;
+    color: #FFFFFF;
+}
+
+.namesSection {
+    font-size: 54px;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    width: 100%;
+}
+
+.namesSection>span {
+    line-height: 40px;
+}
+
+.namesSection>span:nth-child(2) {
+    display: block;
+    text-align: center;
+    margin-right: 60px;
+}

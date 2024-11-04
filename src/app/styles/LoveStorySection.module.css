@@ -1,0 +1,15 @@
+.loveStorySection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'The munday free version', sans-serif;
+    z-index: 2;
+    position: relative;
+}
+
+.loveStorySection>span {
+    font-size: 54px;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 20px 0;
+}
