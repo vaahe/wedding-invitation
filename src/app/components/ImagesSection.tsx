@@ -36,7 +36,7 @@ export const ImagesSection = () => {
       </div>
       <div className="w-1/2">
         <Image
-          src={"/images/image4.jpg"}
+          src={"/images/image7.jpg"}
           alt={"image4"}
           layout="responsive"
           width={1920}

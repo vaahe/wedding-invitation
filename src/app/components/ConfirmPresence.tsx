@@ -3,11 +3,14 @@ import { Snackbar } from "./shared/Snackbar";
 
 export const ConfirmPresence = () => {
   const [fullname, setFullname] = useState("");
-  const [guestsCount, setGuestsCount] = useState(0);
+  const [guestsCount, setGuestsCount] = useState<number | "">(0);
+  const [loading, setLoading] = useState(false);
   const [isAttending, setIsAttending] = useState<boolean | null>(null);
 
-  const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
-  const [snackbarContent, setSnackbarContent] = useState<string>("");
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [snackbarContent, setSnackbarContent] = useState("");
+
+  const SNACKBAR_TIMEOUT = 3000;
 
   const resetFields = () => {
     setGuestsCount(0);
@@ -16,44 +19,51 @@ export const ConfirmPresence = () => {
   };
 
   const validateFields = () => {
-    if (fullname.length === 0 || isAttending === null || guestsCount === 0) {
+    if (!fullname || isAttending === null || !guestsCount) {
       alert("Խնդրում ենք լրացրեք բոլոր դաշտերը");
       return false;
     }
-
     return true;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!validateFields()) return;
 
-    const response = await fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ fullname, guestsCount, isAttending }),
-    });
+    setLoading(true);
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ fullname, guestsCount, isAttending }),
+      });
 
-    const data = await response.json();
-    const content = data.message;
-    setSnackbarContent(content);
-    setShowSnackbar(true);
-    resetFields();
+      const data = await response.json();
+      setSnackbarContent(data?.message || "Message sent successfully");
+      setShowSnackbar(true);
+      resetFields();
+    } catch (error) {
+      console.error("Error sending data:", error);
+      setSnackbarContent("Error sending data. Please try again.");
+      setShowSnackbar(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowSnackbar(false);
-    }, 3000);
+    if (showSnackbar) {
+      const timer = setTimeout(() => setShowSnackbar(false), SNACKBAR_TIMEOUT);
+      return () => clearTimeout(timer);
+    }
   }, [showSnackbar]);
 
   return (
     <div className="relative">
       <div className="flex flex-col text-xl px-[12px] my-20 gap-4 items-center">
-        <span className={"text-center font-bold"}>
+        <span className="text-center font-bold">
           Խնդրում ենք հաստատել Ձեր ներկայությունը միջոցառմանը
         </span>
 
@@ -95,6 +105,7 @@ export const ConfirmPresence = () => {
             type="number"
             min="0"
             placeholder="Հյուրերի քանակը"
+            value={guestsCount || ""}
             onChange={(e) => setGuestsCount(Number(e.target.value))}
             className="border-b-2 border-black px-3 py-2 text-black"
           />
@@ -103,8 +114,9 @@ export const ConfirmPresence = () => {
         <button
           onClick={handleSubmit}
           className="bg-black text-white px-6 py-3 rounded-3xl w-full mt-4"
+          disabled={loading}
         >
-          Ուղարկել
+          {loading ? "Ուղարկվում է..." : "Ուղարկել"}
         </button>
       </div>
       {showSnackbar && <Snackbar content={snackbarContent} />}

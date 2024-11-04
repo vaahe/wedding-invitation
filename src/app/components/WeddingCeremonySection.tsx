@@ -13,9 +13,7 @@ export const WeddingCeremonySection = () => {
       />
       <span>ՀԱՐՍԱՆԵԿԱՆ ՀԱՆԴԻՍՈՒԹՅՈՒՆ</span>
       <span className="font-bold text-3xl">17:00</span>
-      <span className="font-bold text-3xl text-center">
-        «ԴՎԻՆ» ռեստորանային համալիր
-      </span>
+      <span className="font-bold text-3xl text-center">RHodes Music hall</span>
       <span>ք․ Էջմիածին</span>
       <Image
         src={"/images/restaurant.jpg"}
