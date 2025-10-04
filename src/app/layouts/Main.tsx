@@ -31,7 +31,7 @@ export const MainLayout = () => {
         <DayPlan />
         <WeddingSection />
         <WeddingCeremonySection />
-        <ImageContainer src={"image2.PNG"} />
+        <ImageContainer src={"image2.png"} />
         <ConfirmPresence />
       </div>
     </main>
