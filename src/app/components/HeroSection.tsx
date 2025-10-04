@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -45,8 +46,8 @@ export const HeroSection = () => {
       </div>
       <div className="w-full flex overflow-hidden">
         <div className={styles.dateSection}>
-          <span>11</span>
-          <span>01</span>
+          <span>26</span>
+          <span>10</span>
           <span>25</span>
         </div>
         <NameImage />

@@ -5,7 +5,7 @@ import { useCalculateDate } from "../hooks/useCalculateDate";
 import styles from "../styles/WaitingForYouSection.module.css";
 
 export const WaitingForYouSection = () => {
-  const date = new Date(2025, 0, 11);
+  const date = new Date(2025, 9, 26);
   const { remainingDays, remainingHours, remainingMinutes, remainingSeconds } =
     useCalculateDate(date);
 
@@ -34,8 +34,8 @@ export const WaitingForYouSection = () => {
         Սպասում ենք Ձեզ մեր հարսանիքին
       </span>
       <div className={styles.date}>
-        <span>11</span>
-        <span>01</span>
+        <span>26</span>
+        <span>10</span>
         <span>25</span>
       </div>
       <div className={styles.verticalLine} />

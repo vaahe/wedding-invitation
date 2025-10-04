@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef, useEffect, useState } from "react";
 
 import styles from "../styles/AnimatedImages.module.css";
@@ -15,13 +16,14 @@ export const AnimatedImages = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
@@ -29,12 +31,12 @@ export const AnimatedImages = () => {
   return (
     <div ref={sectionRef} className={styles.imagesSection}>
       <img
-        src="/images/image2.jpg"
+        src="/images/image2.PNG"
         alt="image 9"
         className={`${isVisible ? styles.slideInFromLeft : ""}`}
       />
       <img
-        src="/images/image4.jpg"
+        src="/images/image4.JPG"
         alt="image 4"
         className={`${isVisible ? styles.slideInFromRight : ""}`}
       />

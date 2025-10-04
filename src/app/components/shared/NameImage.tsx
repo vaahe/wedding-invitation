@@ -6,8 +6,8 @@ export const NameImage = () => {
     <div className={styles.container}>
       <span className={styles.ampersandSection}>&</span>
       <div className={styles.namesSection}>
-        <span>Narek</span>
-        <span>Anahit</span>
+        <span>Artak</span>
+        <span>Ashkhen</span>
       </div>
     </div>
   );

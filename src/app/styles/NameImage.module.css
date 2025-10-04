@@ -3,7 +3,7 @@
     z-index: 2;
     align-self: flex-end;
     position: relative;
-    left: 5%;
+    left: 3%;
     font-family: 'The munday free version', sans-serif;
 }
 
@@ -32,13 +32,18 @@
 .namesSection {
     font-size: 54px;
     position: absolute;
-    left: 10%;
+    left: 0%;
     top: 40%;
     width: 100%;
 }
 
 .namesSection>span {
     line-height: 40px;
+}
+
+.namesSection>span:nth-child(1) {
+    text-align: left;
+    margin-left: -10px;
 }
 
 .namesSection>span:nth-child(2) {

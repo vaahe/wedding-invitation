@@ -6,7 +6,7 @@ export const ImagesSection = () => {
     <div className="flex flex-wrap mt-20 justify-center gap-4">
       <div className="w-1/2">
         <Image
-          src={"/images/image1.jpg"}
+          src={"/images/image1.PNG"}
           alt={"image1"}
           layout="responsive"
           width={1920}
@@ -14,9 +14,9 @@ export const ImagesSection = () => {
           objectFit="cover"
         />
       </div>
-      <div className="w-2/5">
+      <div className="w-2/5 self-end">
         <Image
-          src={"/images/image2.jpg"}
+          src={"/images/image7.PNG"}
           alt={"image2"}
           layout="responsive"
           width={1920}
@@ -26,7 +26,7 @@ export const ImagesSection = () => {
       </div>
       <div className="w-2/5">
         <Image
-          src={"/images/image3.jpg"}
+          src={"/images/image3.JPG"}
           alt={"image3"}
           layout="responsive"
           width={1920}
@@ -36,8 +36,8 @@ export const ImagesSection = () => {
       </div>
       <div className="w-1/2">
         <Image
-          src={"/images/image7.jpg"}
-          alt={"image4"}
+          src={"/images/image6.JPG"}
+          alt={"image6"}
           layout="responsive"
           width={1920}
           height={1080}

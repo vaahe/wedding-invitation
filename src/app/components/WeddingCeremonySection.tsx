@@ -13,17 +13,18 @@ export const WeddingCeremonySection = () => {
       />
       <span>ՀԱՐՍԱՆԵԿԱՆ ՀԱՆԴԻՍՈՒԹՅՈՒՆ</span>
       <span className="font-bold text-3xl">17:00</span>
-      <span className="font-bold text-3xl text-center">RHodes Music hall</span>
-      <span>ք․ Էջմիածին</span>
-      <Image
-        src={"/images/restaurant.jpg"}
-        alt="noroot"
-        width={256}
-        height={256}
-        className="rounded-full"
-      />
+      <span className="font-bold text-3xl text-center">Meridian Hall</span>
+      <span>ք․ Երևան</span>
+      <div className="w-[256px] h-[256px] relative">
+        <Image
+          src={"/images/restaurant.png"}
+          alt="church"
+          fill
+          className="rounded-full object-cover"
+        />
+      </div>
       <Link
-        href="https://yandex.com/maps/org/215745175248/?ll=44.312119%2C40.146045&z=12"
+        href="https://yandex.com/maps/org/87183635635/?ll=44.588284%2C40.192676&z=16.45"
         target="_blank"
       >
         <button className="transition-all duration-300 ease-in-out border-black border hover:bg-slate-600 hover:text-white hover:border-slate-600 rounded-3xl px-8 py-3 mt-4 text-sm">
