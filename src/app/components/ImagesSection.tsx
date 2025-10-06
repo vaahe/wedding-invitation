@@ -16,7 +16,7 @@ export const ImagesSection = () => {
       </div>
       <div className="w-2/5 self-end">
         <Image
-          src={"/image7.png"}
+          src={"/image7.jpg"}
           alt={"image 7"}
           layout="responsive"
           width={1920}
