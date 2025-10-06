@@ -16,7 +16,7 @@ const montserratARM = localFont({
 
 export const metadata: Metadata = {
   title: "Հարսանյաց հրավիրատոմս",
-  description: "Հրավիրում ենք Ձեզ Նարեկի և Անահիտի հարսանյաց արարողությանը",
+  description: "Հրավիրում ենք Ձեզ Արտակի և Աշխենի հարսանյաց արարողությանը",
 };
 
 export default function RootLayout({
