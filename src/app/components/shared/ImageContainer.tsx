@@ -9,7 +9,7 @@ export const ImageContainer: React.FC<ImageContainerProps> = ({ src }) => {
   return (
     <div className="relative px-[12px] md:w-1/2">
       <Image
-        src={`/images/${src}`}
+        src={`/${src}`}
         alt={src}
         width={1080}
         height={1920}

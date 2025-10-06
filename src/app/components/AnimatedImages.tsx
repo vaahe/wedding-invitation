@@ -31,12 +31,12 @@ export const AnimatedImages = () => {
   return (
     <div ref={sectionRef} className={styles.imagesSection}>
       <img
-        src="/images/image2.png"
+        src="/image2.png"
         alt="image 2"
         className={`${isVisible ? styles.slideInFromLeft : ""}`}
       />
       <img
-        src="/images/image4.jpg"
+        src="/image4.jpg"
         alt="image 4"
         className={`${isVisible ? styles.slideInFromRight : ""}`}
       />
